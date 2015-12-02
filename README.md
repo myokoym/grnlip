@@ -1,5 +1,7 @@
 # Grnlip
 
+[![Gem Version](https://badge.fury.io/rb/grnlip.svg)](http://badge.fury.io/rb/grnlip)
+
 A command line interface for [Groonga](http://groonga.org/).
 
 ## Installation
