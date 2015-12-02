@@ -31,7 +31,7 @@ while line = Readline.readline("groonga(#{basename})> ", true)
     pretty_print = true
     line = line[3..-1]
   end
-  Tempfile.open(['readliroonga', '.grn']) do |file|
+  Tempfile.open(['grnlip', '.grn']) do |file|
     file.write(line)
     file.flush
     response = `#{groonga_exe} #{db_path} < #{file.path}`
