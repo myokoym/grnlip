@@ -2,7 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/grnlip.svg)](http://badge.fury.io/rb/grnlip)
 
-A command line interface for [Groonga](http://groonga.org/).
+A CLI for [Groonga](http://groonga.org/). Supports Windows.
 
 ## TODO
 

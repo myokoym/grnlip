@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Masafumi Yokoyama"]
   spec.email         = ["myokoym@gmail.com"]
 
-  spec.summary       = %q{A command line interface for Groonga.}
+  spec.summary       = %q{A CLI for Groonga. Supports Windodws.}
   spec.description   = spec.summary
   spec.homepage      = "https://github.com/myokoym/grnlip"
   spec.license       = "MIT"
