@@ -4,15 +4,25 @@ require "readline"
 require "tempfile"
 
 if ARGV.size < 2
-  $stderr.puts("Usage: #{$0} GROONGA_EXE DB_PATH")
+  $stderr.puts("Usage: #{$0} GROONGA_EXE DB_PATH [DB_ENCODING]")
   exit(1)
 end
 
 groonga_exe = ARGV.shift
 db_path = ARGV.shift
 basename = File.basename(db_path)
+db_encoding = ARGV.shift
+
+if /mswin|mingw|cygwin/i =~ RUBY_PLATFORM
+  input_encoding = "sjis"
+else
+  input_encoding = "utf-8"
+end
 
 while line = Readline.readline("groonga(#{basename})> ", true)
+  if db_encoding
+    line = line.encode(db_encoding, input_encoding)
+  end
   pretty_print = false
   case line
   when "quit"
@@ -25,6 +35,9 @@ while line = Readline.readline("groonga(#{basename})> ", true)
     file.write(line)
     file.flush
     response = `#{groonga_exe} #{db_path} < #{file.path}`
+    if db_encoding == "utf-8" and input_encoding != "utf-8"
+      response.force_encoding("utf-8")
+    end
     if pretty_print
       require "json"
       puts jj(JSON.parse!(response))
