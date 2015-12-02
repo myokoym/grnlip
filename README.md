@@ -14,7 +14,13 @@ For example:
 
     $ grnlip groonga ~/.milkode/db/milkode.db
 
-Then, REPL by Readline for Groonga is started.
+Then, REPL by Readline for Groonga is started:
+
+    > status
+
+And, you can use pretty-print:
+
+    > pp status
 
 ## Development
 
