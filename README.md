@@ -10,11 +10,15 @@ A command line interface for [Groonga](http://groonga.org/).
 
 ## Usage
 
-    $ grnlip GROONGA_EXE_PATH DB_PATH
+    $ grnlip GROONGA_EXE_PATH DB_PATH [DB_ENCODING]
 
 For example:
 
     $ grnlip groonga ~/.milkode/db/milkode.db
+
+If you use UTF-8 database on Windows, you should specify the following option to use multibyte characters:
+
+    $ grnlip groonga ~/.milkode/db/milkode.db utf-8
 
 Then, REPL by Readline for Groonga is started:
 
