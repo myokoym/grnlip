@@ -4,6 +4,10 @@
 
 A command line interface for [Groonga](http://groonga.org/).
 
+## TODO
+
+* Support multiline input.
+
 ## Installation
 
     $ gem install grnlip
