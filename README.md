@@ -18,7 +18,7 @@ For example:
 
 If you use UTF-8 database on Windows, you should specify the following option to use multibyte characters:
 
-    $ grnlip groonga ~/.milkode/db/milkode.db utf-8
+    > grnlip bin\groonga \Users\myokoym\.milkode\db\milkode.db utf-8
 
 Then, REPL by Readline for Groonga is started:
 
