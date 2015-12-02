@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+
+require "readline"
+require "tempfile"
+
+if ARGV.size < 2
+  $stderr.puts("Usage: #{$0} GROONGA_EXE DB_PATH")
+  exit(1)
+end
+
+groonga_exe = ARGV.shift
+db_path = ARGV.shift
+basename = File.basename(db_path)
+
+while line = Readline.readline("groonga(#{basename})> ", true)
+  pretty_print = false
+  case line
+  when "quit"
+    break
+  when /\App /
+    pretty_print = true
+    line = line[3..-1]
+  end
+  Tempfile.open(['readliroonga', '.grn']) do |file|
+    file.write(line)
+    file.flush
+    response = `#{groonga_exe} #{db_path} < #{file.path}`
+    if pretty_print
+      require "json"
+      puts jj(JSON.parse!(response))
+    else
+      puts response
+    end
+  end
+end
+
+puts
