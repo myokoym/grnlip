@@ -2,7 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/grnlip.svg)](http://badge.fury.io/rb/grnlip)
 
-A CLI for [Groonga](http://groonga.org/). Supports Windows.
+A CLI for [Groonga](http://groonga.org/) using Readline. Supports Windows.
 
 ## TODO
 
