@@ -19,7 +19,10 @@ else
   input_encoding = "utf-8"
 end
 
-while line = Readline.readline("groonga(#{basename})> ", true)
+buffer = ""
+prompt = ">"
+
+while line = Readline.readline("groonga(#{basename})#{prompt} ", true)
   if db_encoding
     line = line.encode(db_encoding, input_encoding)
   end
@@ -32,9 +35,18 @@ while line = Readline.readline("groonga(#{basename})> ", true)
     line = line[3..-1]
   end
   Tempfile.open(['grnlip', '.grn']) do |file|
-    file.write(line)
+    buffer << line
+    file.write(buffer)
     file.flush
     response = `#{groonga_exe} #{db_path} < #{file.path}`
+    if response.size.zero?
+      buffer << "\n"
+      prompt = "*"
+      next
+    else
+      buffer = ""
+      prompt = ">"
+    end
     if db_encoding == "utf-8" and input_encoding != "utf-8"
       response.force_encoding("utf-8")
     end
