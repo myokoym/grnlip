@@ -39,7 +39,7 @@ while line = Readline.readline("groonga(#{basename})#{prompt} ", true)
     file.write(buffer)
     file.flush
     response = `#{groonga_exe} #{db_path} < #{file.path}`
-    if response.size.zero?
+    if response.empty?
       buffer << "\n"
       prompt = "*"
       next
