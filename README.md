@@ -6,7 +6,7 @@ A CLI for [Groonga](http://groonga.org/) using Readline. Supports Windows.
 
 ## TODO
 
-* Support multiline input.
+* ...
 
 ## Installation
 
