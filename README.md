@@ -6,7 +6,7 @@ A CLI for [Groonga](http://groonga.org/) using Readline. Supports Windows.
 
 ## TODO
 
-* ...
+* [MUST] Support vi mode.
 
 ## Installation
 
