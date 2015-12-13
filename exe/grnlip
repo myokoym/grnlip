@@ -11,7 +11,7 @@ end
 groonga_exe = ARGV.shift
 db_path = ARGV.shift
 basename = File.basename(db_path)
-db_encoding = ARGV.shift
+db_encoding = ARGV.shift.downcase
 
 if /mswin|mingw|cygwin/i =~ RUBY_PLATFORM
   input_encoding = "sjis"
