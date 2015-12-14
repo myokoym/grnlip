@@ -18,7 +18,7 @@ A CLI for [Groonga](http://groonga.org/) using Readline. Supports Windows.
 
 For example:
 
-    $ grnlip groonga %HOME%\.milkode\db\milkode.db
+    $ grnlip groonga ~\.milkode\db\milkode.db
 
 If you use UTF-8 database on Windows, you should specify the following option to use multibyte characters:
 
